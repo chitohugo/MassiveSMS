@@ -1,0 +1,104 @@
+timestamp: 2016-08-19T11:12:13.625881
+CREATE TABLE municipio(
+    id SERIAL PRIMARY KEY,
+    descripcion VARCHAR(20) NOT NULL
+);
+success!
+timestamp: 2016-08-19T11:12:14.121851
+CREATE TABLE cargo(
+    id SERIAL PRIMARY KEY,
+    descripcion VARCHAR(20) NOT NULL
+);
+success!
+timestamp: 2016-08-19T11:12:14.208341
+CREATE TABLE mun_cargo(
+    fk_municipio INTEGER REFERENCES municipio (id) ON DELETE CASCADE  NOT NULL ,
+    fk_cargo INTEGER REFERENCES cargo (id) ON DELETE CASCADE  NOT NULL ,
+    PRIMARY KEY(fk_municipio, fk_cargo)) ;
+success!
+timestamp: 2016-08-19T11:12:14.308803
+CREATE TABLE contacto(
+    id SERIAL PRIMARY KEY,
+    numero VARCHAR(11) NOT NULL UNIQUE,
+    fk_municipio_id INTEGER REFERENCES municipio (id) ON DELETE CASCADE  ,
+    fk_cargo_id INTEGER REFERENCES cargo (id) ON DELETE CASCADE  
+);
+success!
+timestamp: 2016-08-28T09:50:47.318355
+CREATE TABLE estado_mensaje(
+    id SERIAL PRIMARY KEY,
+    estado VARCHAR(1) NOT NULL DEFAULT '1',
+    estado_envio VARCHAR(1) NOT NULL DEFAULT '1',
+    fk_municipio_id INTEGER REFERENCES municipio (id) ON DELETE CASCADE  ,
+    fk_cargo_id INTEGER REFERENCES cargo (id) ON DELETE CASCADE  ,
+    destino VARCHAR(11) NOT NULL,
+    mensaje VARCHAR(160) NOT NULL
+);
+success!
+timestamp: 2016-08-28T10:03:22.706456
+CREATE TABLE estado_mensaje(
+    id SERIAL PRIMARY KEY,
+    estado VARCHAR(1) NOT NULL DEFAULT '1',
+    estado_envio VARCHAR(1) NOT NULL DEFAULT '1',
+    fk_municipio_id INTEGER REFERENCES municipio (id) ON DELETE CASCADE  ,
+    fk_cargo_id INTEGER REFERENCES cargo (id) ON DELETE CASCADE  ,
+    destino VARCHAR(11) NOT NULL,
+    mensaje VARCHAR(160) NOT NULL
+);
+timestamp: 2016-10-13T22:56:47.254737
+CREATE TABLE estado_mensaje(
+    id SERIAL PRIMARY KEY,
+    estado VARCHAR(1) NOT NULL DEFAULT '1',
+    estado_envio VARCHAR(1) NOT NULL DEFAULT '1',
+    fk_municipio_id INTEGER REFERENCES municipio (id) ON DELETE CASCADE  ,
+    fk_cargo_id INTEGER REFERENCES cargo (id) ON DELETE CASCADE  ,
+    destino VARCHAR(11) NOT NULL,
+    mensaje VARCHAR(160) NOT NULL
+);
+timestamp: 2016-10-13T23:00:24.517345
+CREATE TABLE auth_user(
+    id SERIAL PRIMARY KEY,
+    first_name VARCHAR(128),
+    last_name VARCHAR(128),
+    email VARCHAR(512),
+    username VARCHAR(128),
+    password VARCHAR(512),
+    registration_key VARCHAR(512),
+    reset_password_key VARCHAR(512),
+    registration_id VARCHAR(512)
+);
+success!
+timestamp: 2016-10-13T23:03:38.721837
+CREATE TABLE auth_group(
+    id SERIAL PRIMARY KEY,
+    role VARCHAR(512),
+    description TEXT
+);
+success!
+timestamp: 2016-10-13T23:03:39.215240
+CREATE TABLE auth_event(
+    id SERIAL PRIMARY KEY,
+    time_stamp TIMESTAMP,
+    client_ip VARCHAR(512),
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    origin VARCHAR(512),
+    description TEXT
+);
+success!
+timestamp: 2016-10-13T23:03:39.468797
+CREATE TABLE auth_membership(
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    group_id INTEGER REFERENCES auth_group (id) ON DELETE CASCADE  
+);
+success!
+timestamp: 2016-10-13T23:08:10.851218
+CREATE TABLE estado_mensaje(
+    id SERIAL PRIMARY KEY,
+    estado VARCHAR(1) NOT NULL DEFAULT '1',
+    estado_envio VARCHAR(1) NOT NULL DEFAULT '1',
+    fk_municipio_id INTEGER REFERENCES municipio (id) ON DELETE CASCADE  ,
+    fk_cargo_id INTEGER REFERENCES cargo (id) ON DELETE CASCADE  ,
+    destino VARCHAR(11) NOT NULL,
+    mensaje VARCHAR(160) NOT NULL
+);

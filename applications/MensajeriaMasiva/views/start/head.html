@@ -1,0 +1,33 @@
+ <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge{{=not request.is_local and ',chrome=1' or ''}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <title>{{#=response.title or request.application}}</title> -->
+    <title> MassivaSmS</title>
+    <meta name="application-name" content="{{=request.application}}">
+    <meta name="google-site-verification" content=""> 
+    <!-- Select-2 -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/css/select2.min.css" rel="stylesheet"/>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/js/select2.min.js"></script>    
+    <!-- Google Material Design fonts -->
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{=URL('static','js/multipleSelect/multiple-select.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{=URL('static','bower_components/fakeLoader/fakeLoade.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{=URL('static','bower_components/preLoader/css/styles_ajax.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{=URL('static','css/massive.css')}}">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <!-- Bootstrap Material Design -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.material-design/0.5.9/css/bootstrap-material-design.min.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/bootstrap.material-design/0.5.9/css/ripples.min.css">
+    <script src="//cdn.jsdelivr.net/bootstrap.material-design/0.5.9/js/material.min.js"></script>
+    <script src="//cdn.jsdelivr.net/bootstrap.material-design/0.5.9/js/ripples.min.js"></script>
+    <script src="{{=URL('static','js/multipleSelect/multiple-select.js')}}"></script>
+    <script src="{{ =URL('static','bower_components/fakeLoader/fakeLoader.min.js') }}"></script>
+    <script>
+    $(function(){
+        $.material.init()
+    })
+    </script>  

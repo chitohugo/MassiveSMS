@@ -1,0 +1,42 @@
+(dp1
+S'fk_cargo'
+p2
+(dp3
+S'length'
+p4
+I512
+sS'unique'
+p5
+I00
+sS'sortable'
+p6
+I2
+sS'sql'
+p7
+S'INTEGER REFERENCES cargo (id) ON DELETE CASCADE  NOT NULL '
+p8
+sS'notnull'
+p9
+I01
+sS'type'
+p10
+S'reference cargo'
+p11
+ssS'fk_municipio'
+p12
+(dp13
+g4
+I512
+sg5
+I00
+sg6
+I1
+sg7
+S'INTEGER REFERENCES municipio (id) ON DELETE CASCADE  NOT NULL '
+p14
+sg9
+I01
+sg10
+S'reference municipio'
+p15
+ss.
